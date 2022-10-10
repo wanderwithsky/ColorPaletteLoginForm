@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Color Palette Login</title>
+</head>
+<body>
+    <div class="login">
+        <h2 id="txt">Login</h2>
+        <div class="inputBox">
+            <input type="text" placeholder="Username..">
+        </div>
+        <div class="inputBox">
+            <input type="password" placeholder="Password..">
+        </div>
+        <div class="inputBox">
+            <input type="submit" value="Login" id="btn">
+        </div>
+        <div class="group">
+            <a href="#">Forget Password?</a>
+            <a href="#">SignUp</a>
+        </div>
+    </div>
+    <div class="colors">
+    <span class="active" onclick="changeColor('#1dd1a1')" style="--clr:#1dd1a1;"></span>
+
+    <span onclick="changeColor('#FF884B')" style="--clr:#FF884B;"></span>
+
+    <span onclick="changeColor('#FF577F')" style="--clr:#FF577F;"></span>
+
+    <span onclick="changeColor('#FFD384')" style="--clr:#FFD384;"></span>
+
+    <span onclick="changeColor('#5F9DF7')" style="--clr:#5F9DF7;"></span>
+    </div>
+
+    <script>
+        let btn = document.getElementById('btn');
+        let txt = document.getElementById('txt');
+        function changeColor(color){
+            document.body.style.background = color;
+            btn.style.background = color;
+            txt.style.borderColor = color; 
+
+
+            document.querySelectorAll('span').forEach(function(item){
+                item.classList.remove('active')
+            })
+            event.target.classList.add('active')
+        }
+    </script>
+</body>
+</html> 
